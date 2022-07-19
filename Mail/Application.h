@@ -59,6 +59,7 @@ public:
 	void push_contacts(Contacts* c);
 	void pop_contacts(Contacts* folder);
 	bool isValid(const string& email);
+	bool find_contact_in_mail(Mail* mail,string name);
 	void start_mail_check();
 	bool serach_rlist(string name);
 	void forward_mail(Mail* mail);
@@ -68,6 +69,7 @@ protected:
 	Folder** mail_folders;
 	Contacts** mail_contacts;
 	string my_mail = "orrshinder@gmail.com";
+	string my_name = "orr";
 	//static int Mail_Value;
 	int m_size_contacts;  
 	int m_top_contacts;   
