@@ -48,7 +48,8 @@ void Folder::Remove(Mail* mail)
 		}
 		if (m_top == 1)
 		{
-			delete mail_list[0];
+			//delete mail_list[0];
+			mail_list[0] = 0;
 		}
 		m_top--;
 		m_size--;
@@ -113,7 +114,9 @@ void Folder::push(Mail* c)
 		for (int j = 0; j < (int)m_size; j++) {
 			mail_list[j + 1] = temp[j];
 		}
+		mail_list[0] = 0;
 		mail_list[0] = c;
+		cout << mail_list[0]->get_uniqe_id() << endl;
 		m_size = m_size + 1;
 		m_top++;
 	}
@@ -136,6 +139,9 @@ void Folder::push_back(Mail* c)
 			for (int i = 1; i < m_size; i++) {
 				mail_list[i-1] = temp[i];
 			}
+
+			
+			
 			mail_list[m_top] = (c);
 			m_top++;
 		}
@@ -147,8 +153,8 @@ void Folder::push_back(Mail* c)
 			temp[i] = (mail_list[i]);
 		}
 		mail_list = new  Mail * [m_size + 1];;
-		for (int j = 1; j < (int)m_size; j++) {
-			mail_list[j-1] = temp[j];
+		for (int j = 0; j < (int)m_size; j++) {
+			mail_list[j] = temp[j];
 		}
 		mail_list[m_top] = c;
 		m_size = m_size + 1;
