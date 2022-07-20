@@ -75,6 +75,7 @@ void Application::main_screen()
 {
 	int more_flag = 1;
 	string chose_option;
+	List("Inbox");
 	while (1)
 	{
 		chose_option = option();
