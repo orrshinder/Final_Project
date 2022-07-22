@@ -21,17 +21,17 @@ public:
 	friend class Folder;
 	friend class Contact;
 	friend class Application;
-	Contacts();
-	~Contacts();
-	void Remove(Contact* person);
-	void Add(string name, string address);
+	Contacts();//constractor
+	~Contacts();//distractor
+	void Remove(Contact* person);//remove contact
+	void Add(string name, string address);//add contact
 	virtual string name_list() const;
-	void seralization(ofstream& ofs);
+	void seralization(ofstream& ofs);//writing infomation to file
 	friend ostream& operator<<(ostream& os, const Contacts& c);
 	bool operator ==(const Contacts* other);
-	Contact* find_contact(string name);
-	bool contact_exsit(string name);
-	int size_list()const;
+	Contact* find_contact(string name);//find contact by mail or name
+	bool contact_exsit(string name);//check if contact exist by name or mail
+	int size_list()const;//returns the sie of the list
 
 protected:
 	vector<Contact*> contact_list;
