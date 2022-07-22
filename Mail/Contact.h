@@ -17,11 +17,11 @@ public:
 	friend class Folder;
 	friend class Contacts;
 	friend class Application;
-	Contact();
-	Contact(string name,string address);
-	~Contact();
-	string get_name() const;
-	string get_address() const;
+	Contact();//defult constractor
+	Contact(string name,string address);//constractor
+	~Contact();//distractor
+	string get_name() const;//returns the name
+	string get_address() const;//returns the address
 	bool operator ==(const Contact& other);
 	bool operator !=(const Contact& other);
 protected:
