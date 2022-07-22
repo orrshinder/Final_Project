@@ -3,7 +3,6 @@
 
 Contacts::Contacts()
 {
-	//contact_list.resize(0);
 	list_name = "";
 }
 string Contacts::name_list()const
@@ -21,25 +20,22 @@ void Contacts::Remove(Contact* person)
 	for (auto it = contact_list.begin(); it != contact_list.end(); ++it)
 	{
 		Contact* temp = *it;
-		if (temp->operator==(*person))
+		if (temp->operator==(*person))//if the person is match deleting him
 		{
 			Contact* x = contact_list.at(counter);
 			contact_list.erase(it);
 		}
-		counter++;
 	}
 }
 void Contacts::Add(string name, string address)
 {
 	Contact* temp = new Contact(name, address);
-	//contact_list.emplace(contact_list.begin(),temp);
 	contact_list.insert(contact_list.begin(), temp);
 }
 
 void Rlist::AddToList(string name, string address)
 {
 	Contact* temp = new Contact(name, address);
-	//contact_list.emplace(contact_list.begin(),temp);
 	contact_list.insert(contact_list.begin(), temp);
 }
 void Rlist::RemoveFromList(string name, string address)
