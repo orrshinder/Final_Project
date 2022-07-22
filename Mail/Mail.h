@@ -24,15 +24,16 @@ public:
 	Mail();
 	virtual ~Mail();
 	string get_Date() const;
-	virtual string* get_Send_From() const=0;
-	virtual string* get_Send_To() const=0;
-	void get_Send_From_print() const;
-	string get_Subject() const;
-	string get_Content() const;
-	int get_uniqe_id()const;
-	void seralization(ofstream& ofs);
-	void seralization_contacts(ofstream& ofs);
+	virtual string* get_Send_From() const=0;//rturns the sent from mails
+	virtual string* get_Send_To() const=0;//rturns the sent to mails
+	void get_Send_From_print() const;//print the people that sent from the mail
+	string get_Subject() const;//returns the subject
+	string get_Content() const;//returns the Content
+	int get_uniqe_id()const;//returns the uniqe id
+	void seralization(ofstream& ofs);//writing infomation to file
+	void seralization_contacts(ofstream& ofs);//writing infomation to file
 	friend ostream& operator<<(ostream& os, const Mail& c);
+	Mail& operator =(const Mail* other);
 
 protected:
 
