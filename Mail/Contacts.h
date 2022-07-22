@@ -43,7 +43,7 @@ public:
 	Rlist(string name);
 	~Rlist();
 	void delete_contact(Contact* person);
-	virtual string name_list() const;
+	string name_list() const;
 	void AddToList(string name, string address);
 	void RemoveFromList(string name, string address);
 	void seralization(ofstream& ofs);
