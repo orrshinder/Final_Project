@@ -18,18 +18,18 @@ public:
 	friend class Contacts;
 	friend class Contact;
 	friend class Application;
-	Folder(string m_name);
-	~Folder();
+	Folder(string m_name);//constractor
+	~Folder();//distractor
 	void Remove(Mail* mail);
-	void Add_old_mail(Mail* mail);
-	void Add_new_mail(Mail* mail);
-	void seralization(ofstream& ofs);
+	void Add_old_mail(Mail* mail);//add new mail
+	void Add_new_mail(Mail* mail);//add old mail
+	void seralization(ofstream& ofs);//writing infomation to file
 	bool operator ==(const Folder* other);
 	void push(Mail* c);
 	void push_back(Mail* c);
-	bool isFull() const;
-	bool isEmpty();
-	unsigned size()const;
+	bool isFull() const;//returns if the list is full
+	bool isEmpty();//returns if the list is empty
+	unsigned size()const;//retrns the size of the list
 
 protected:
 	string m_name;
