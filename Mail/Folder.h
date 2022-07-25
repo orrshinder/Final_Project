@@ -28,7 +28,7 @@ public:
 	void push(Mail* c);
 	void push_back(Mail* c);
 	bool isFull() const;//returns if the list is full
-	bool isEmpty();//returns if the list is empty
+	bool isEmpty() const;//returns if the list is empty
 	unsigned size()const;//retrns the size of the list
 
 protected:
