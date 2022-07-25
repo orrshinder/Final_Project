@@ -161,7 +161,7 @@ void Folder::push_back(Mail* c)
 		m_top++;
 	}
 }
-bool Folder::isEmpty()
+bool Folder::isEmpty() const
 {
 	return m_top == 0;
 }
